@@ -1,5 +1,6 @@
 # speech-processing-stability-check
 
+[![CI](https://github.com/Cephalgo/speech-processing-stability-check/actions/workflows/ci.yml/badge.svg)](https://github.com/Cephalgo/speech-processing-stability-check/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A small Python command-line tool that measures **how much standard speech
