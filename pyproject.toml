@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speech-processing-stability-check"
+version = "0.1.0"
+description = "Check how much standard speech features shift when the same recordings pass through different noise-suppression, codec and phone-band processing."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "Cephalgo" }]
+keywords = ["speech", "voice", "digital biomarkers", "clinical trials", "BYOD",
+            "noise suppression", "reliability", "ICC", "praat", "egemaps"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+    "pandas>=1.4",
+    "soundfile>=0.12",
+    "praat-parselmouth>=0.4.3",
+    "noisereduce>=3.0",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+egemaps = ["opensmile>=2.4"]
+rnnoise = ["pyrnnoise>=0.4"]
+all = ["matplotlib>=3.5", "opensmile>=2.4", "pyrnnoise>=0.4"]
+dev = ["pytest>=7", "matplotlib>=3.5"]
+
+[project.scripts]
+speech-stability-check = "speech_stability_check.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Cephalgo/speech-processing-stability-check"
+Cephalgo = "https://www.cephalgo.com"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

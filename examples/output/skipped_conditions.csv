@@ -1,0 +1,2 @@
+condition,reason
+amr_nb,ffmpeg has no 'libopencore_amrnb' encoder
